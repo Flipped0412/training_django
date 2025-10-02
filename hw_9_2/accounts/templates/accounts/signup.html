@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}회원가입{% endblock %}
+{% block content %}
+  <h1 class="h4 mb-3">회원가입</h1>
+  <form method="post" class="card card-body">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-primary">가입하기</button>
+    <a class="btn btn-link" href="{% url 'accounts:user_list' %}">목록으로</a>
+  </form>
+{% endblock %}
